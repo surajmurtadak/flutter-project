@@ -12,58 +12,80 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
             backgroundColor: Colors.teal,
             body: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 100.0,
-                    margin: const EdgeInsets.all(10.0),
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 50.0,
+                  foregroundImage: AssetImage('images/profile.jpg'),
+                ),
+                const Text(
+                  'Suraj Murtadak',
+                  style: TextStyle(
+                    fontFamily: 'Pacifico',
                     color: Colors.white,
-                    child: const Center(
-                      child: Text("Row Column"),
+                    fontSize: 35.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const Text(
+                  'Flutter Developer',
+                  style: TextStyle(
+                    fontFamily: 'RobotoMono',
+                    color: Colors.white70,
+                    fontSize: 18.0,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20.0,
+                  width: 150.0,
+                  child: Divider(
+                    color: Colors.white,
+                  ),
+                ),
+                Card(
+                  // width: double.infinity,
+                  // height: 50.0,
+                  margin: const EdgeInsets.all(10.0),
+                  // padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  color: Colors.white,
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.phone,
+                      size: 25.0,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      '+91 9421825837',
+                      style: TextStyle(
+                        fontSize: 17.0,
+                        color: Colors.teal[900],
+                      ),
                     ),
                   ),
-                  Container(
-                    color: Colors.white,
-                    margin: const EdgeInsets.all(10.0),
-                    width: double.infinity,
-                    height: 100.0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 80.0,
-                          height:80.0,
-                          margin: const EdgeInsets.all(10.0),
-                          color: Colors.blue,
-                          child: const Center(
-                            child: Text('first'),
-                          ),
-                        ),
-                        Container(
-                          width: 80.0,
-                          height:80.0,
-                          margin: const EdgeInsets.all(10.0),
-                          color: Colors.blue,
-                          child: const Center(
-                            child: Text('second'),
-                          ),
-                        ),
-                        Container(
-                          width: 80.0,
-                          height:80.0,
-                          margin: const EdgeInsets.all(10.0),
-                          color: Colors.blue,
-                          child: const Center(
-                            child: Text('third'),
-                          ),
-                        ),
-                      ],
+                ),
+                Card(
+                  color: Colors.white,
+                  margin: const EdgeInsets.all(10.0),
+                  // padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  // width: double.infinity,
+                  // height: 50.0,
+                  child: ListTile(
+                    leading: const Icon(
+                      Icons.email,
+                      color: Colors.teal,
+                      size: 25.0,
                     ),
-                  ),
-                ],
-              )
-            )));
+                    title: Text(
+                      'surajmurtadak@gmail.com',
+                      style: TextStyle(
+                        fontSize: 17.0,
+                        color : Colors.teal[900],
+                      ),
+                    ),
+                  )
+                ),
+              ],
+            ))));
   }
 }
