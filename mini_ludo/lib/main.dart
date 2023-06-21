@@ -33,10 +33,10 @@ class _MyAppState extends State<MyApp> {
       }
       else {
         if (score1 > score2 && score1 >= 50) {
-          win = 'The winner is Player1';
+          win = 'The winner is Player 1';
         }
         else if( score2 > score1 && score2>= 50) {
-          win ='The winner is Player2';
+          win ='The winner is Player 2';
         }
       }
         instruction='';
