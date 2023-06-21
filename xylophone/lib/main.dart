@@ -18,6 +18,19 @@ class _MyAppState extends State<MyApp> {
     await player.play(AssetSource('sound$num.wav'));
   }
 
+  Expanded playSoundBtn({int? soundCode, Color? colorCode}) => Expanded(
+        child: TextButton(
+          onPressed: () => playSound(soundCode!),
+          style: TextButton.styleFrom(
+            padding: EdgeInsets.zero,
+            backgroundColor: colorCode,
+            shape:
+                const BeveledRectangleBorder(borderRadius: BorderRadius.zero),
+          ),
+          child: const SizedBox(),
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,90 +39,13 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(1),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.red,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(2),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.orange,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(3),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.yellow,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(4),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.green,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(5),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.blue,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(6),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.indigo,
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  onPressed: () => playSound(7),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: const Color(0xff9400D3),
-                    shape: const BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero),
-                  ),
-                  child: const SizedBox(),
-                ),
-              ),
+              playSoundBtn(soundCode: 1, colorCode: Colors.red),
+              playSoundBtn(soundCode: 2, colorCode: Colors.orange),
+              playSoundBtn(soundCode: 3, colorCode: Colors.yellow),
+              playSoundBtn(soundCode: 4, colorCode: Colors.green),
+              playSoundBtn(soundCode: 5, colorCode: Colors.blue),
+              playSoundBtn(soundCode: 6, colorCode: Colors.indigo),
+              playSoundBtn(soundCode: 7, colorCode: const Color(0xff9400D3)),
             ],
           ),
         ),
